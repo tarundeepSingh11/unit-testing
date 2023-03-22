@@ -3,6 +3,7 @@ package com.demo.service;
 import com.demo.domain.Order;
 import org.junit.*;
 
+import static com.demo.service.OrderService.getInstance;
 import static org.junit.Assert.*;
 
 public class OrderServiceTest    {
@@ -15,15 +16,15 @@ public class OrderServiceTest    {
         System.out.println("Before");
     }
 
-   // @Test(expected = Exception.class)
+//    @Test(expected = Exception.class)
 //    public void test1(){
 //        Order o = new Order(5,"Food",100);
-//        assertEquals(20,OrderService.getInstance().placeOrder(o));
+//        boolean ab=20,OrderService.getInstance().placeOrder(o);
 //    }
     @Test
     public void test2(){
         Order o1 = new Order(5,"Food",25.8);
-        assertTrue(OrderService.getInstance().placeOrder(o1,"Food"));
+        assertTrue(getInstance().placeOrder(o1,"Food"));
     }
     @After
     public void testAfter() throws Exception {

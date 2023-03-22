@@ -14,6 +14,7 @@ import static org.junit.Assert.assertTrue;
 
 
 public class EmailServiceTest {
+    EmailService amial=new EmailService();
     public static void testBeforeClass() throws Exception {
         System.out.println("Before Class");
     }
@@ -23,11 +24,11 @@ public class EmailServiceTest {
         System.out.println("Before");
     }
 
-//    @Test(expected = Exception.class)
-//    public void test1() throws Exception {
-//        Order o = new Order(5, "Food", 25.8);
-//        assertFalse(EmailService.getInstance().sendEmail(o));
-//    }
+    @Test(expected = Exception.class)
+    public void test1() throws Exception {
+        Order o = new Order(5, "Food", 25.8);
+        EmailService.getInstance().sendEmail(o);
+    }
 
     @Test
     public void test2() {
